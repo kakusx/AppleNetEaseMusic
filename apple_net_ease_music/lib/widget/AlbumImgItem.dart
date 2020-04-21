@@ -25,21 +25,34 @@ class _AlbumImgItemState extends State<AlbumImgItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 3, 15, 3),
+      padding: EdgeInsets.all(2),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          CachedNetworkImage(
-            imageUrl: this.imgSrc,
-            width: 50,
-            height: 50,
+          Container(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: CachedNetworkImage(
+              fit: BoxFit.fill,
+              imageUrl: this.imgSrc,
+              width: 160,
+              height: 160,
+            ),
+          ),
           ),
           Text(
             this.title,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.left,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
           ),
           Text(
             this.subTitle,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black54),
+            textAlign: TextAlign.left,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black54),
           )
         ],
       ),
