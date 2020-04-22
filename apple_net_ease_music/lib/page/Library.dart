@@ -1,6 +1,9 @@
+import 'package:appleneteasemusic/classes/ScrollEvent.dart';
+import 'package:appleneteasemusic/util/EventBusUtil.dart';
 import 'package:appleneteasemusic/widget/AlbumImgItem.dart';
 import 'package:appleneteasemusic/widget/LineTextItem.dart';
 import 'package:appleneteasemusic/widget/SubTitleItem.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +13,8 @@ class LibraryPage extends StatefulWidget {
 }
 
 class _LibraryPageState extends State<LibraryPage> {
+
+  //region 专辑封面
   List<AlbumImgItem> _data = [
     AlbumImgItem(
       key: Key('1'),
@@ -42,9 +47,21 @@ class _LibraryPageState extends State<LibraryPage> {
       imgSrc: 'http://p1.music.126.net/KsO32EFqwyptOMqA1hYGFQ==/109951164922653118.jpg?param=177y177',
     )
   ];
+  //endregion
 
   @override
   Widget build(BuildContext context) {
+
+    double scrollHeight = 0;
+
+    EventBus eventBus = new EventBus();
+
+    var _listScrollCtl = ScrollController(initialScrollOffset: 0);
+    _listScrollCtl.addListener((){
+      scrollHeight = _listScrollCtl.position.pixels;
+      EventBusUtil.getInstance().fire(ScrollEvent(scrollHeight));
+    });
+
     return RefreshIndicator(
         backgroundColor: Colors.white,
         onRefresh: () {
@@ -56,6 +73,7 @@ class _LibraryPageState extends State<LibraryPage> {
                 child: Container(
               padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
               child: ListView(
+                controller: _listScrollCtl,
                 shrinkWrap: true,
                 children: <Widget>[
                   Container(
