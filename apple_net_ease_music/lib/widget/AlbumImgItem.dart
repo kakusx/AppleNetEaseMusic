@@ -33,10 +33,10 @@ class _AlbumImgItemState extends State<AlbumImgItem> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: CachedNetworkImage(
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
               imageUrl: this.imgSrc,
-              width: 160,
-              height: 160,
+              width: 150,
+              height: 150,
             ),
           ),
           ),

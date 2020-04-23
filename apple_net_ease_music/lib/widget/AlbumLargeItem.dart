@@ -3,26 +3,24 @@ import 'package:flutter/material.dart';
 
 class AlbumLargeItem extends StatefulWidget {
   final String title;
-  final String subTitle;
+  final String artist;
   final String imgSrc;
   final String albumType;
-  final Key key;
 
-  AlbumLargeItem({this.title, this.subTitle, this.imgSrc, this.albumType, this.key});
+  AlbumLargeItem({this.title, this.artist, this.imgSrc, this.albumType});
 
   @override
   _AlbumLargeItemState createState() =>
-      _AlbumLargeItemState(title: this.title, subTitle: this.subTitle, imgSrc: this.imgSrc, albumType: this.albumType, key: this.key);
+      _AlbumLargeItemState(title: this.title, artist: this.artist, imgSrc: this.imgSrc, albumType: this.albumType);
 }
 
 class _AlbumLargeItemState extends State<AlbumLargeItem> {
   final String title;
-  final String subTitle;
+  final String artist;
   final String imgSrc;
   final String albumType;
-  final Key key;
 
-  _AlbumLargeItemState({this.title, this.subTitle, this.imgSrc, this.albumType, this.key});
+  _AlbumLargeItemState({this.title, this.artist, this.imgSrc, this.albumType});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +44,7 @@ class _AlbumLargeItemState extends State<AlbumLargeItem> {
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           Text(
-            this.subTitle,
+            this.artist,
             textAlign: TextAlign.left,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,

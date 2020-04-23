@@ -19,7 +19,7 @@ class _SubTitleItemState extends State<SubTitleItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(10, 3, 10, 3),
+      padding: EdgeInsets.fromLTRB(10, 3, 10, 8),
       child: Row(
         children: <Widget>[
           Expanded(
@@ -28,7 +28,7 @@ class _SubTitleItemState extends State<SubTitleItem> {
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
-          Text(this.buttonText??'', style: TextStyle(color: Colors.blue, fontSize: 14),)
+          Text(this.buttonText??'', style: TextStyle(color: Theme.of(context).accentColor, fontSize: 14),)
         ],
       ),
     );

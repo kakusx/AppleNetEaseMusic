@@ -1,6 +1,7 @@
 import 'package:appleneteasemusic/classes/ScrollEvent.dart';
 import 'package:appleneteasemusic/util/EventBusUtil.dart';
 import 'package:appleneteasemusic/constant/Constant.dart';
+import 'package:appleneteasemusic/widget/LineTextItem.dart';
 import 'package:appleneteasemusic/widget/SubTitleItem.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -69,7 +70,7 @@ class _BrowsePageState extends State<BrowsePage> {
                       SubTitleItem(titleText: '热门歌单', buttonText: '查看全部',),
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        height: 210,
+                        height: 200,
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -77,10 +78,10 @@ class _BrowsePageState extends State<BrowsePage> {
                         ),
                       ),
                       Divider(),
-                      SubTitleItem(titleText: '音乐分类', buttonText: '查看全部',),
+                      SubTitleItem(titleText: '音乐心情',),
                       Container(
-                        height: 70,
-                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                        height: 90,
+                        padding: EdgeInsets.fromLTRB(10, 5, 0, 10),
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
@@ -89,6 +90,73 @@ class _BrowsePageState extends State<BrowsePage> {
                       ),
                       Divider(),
 
+                      SubTitleItem(titleText: '新歌速递', buttonText: '查看全部'),
+                      Container(
+                        height: 270,
+                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                        child: ListView.builder(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 10,
+                          itemExtent: 310.0,
+                          itemBuilder: (BuildContext context, int index){
+                            return songBuilder(index);
+                          },
+                        ),
+                      ),
+                      Divider(),
+                      SubTitleItem(titleText: '探索更多'),
+                      LineTextItem(
+                        text: '排行榜',
+                      ),
+                      Divider(),
+                      LineTextItem(
+                        text: '音乐风格',
+                      ),
+                      Divider(),
+                      LineTextItem(
+                        text: '语种',
+                      ),
+                      Divider(),
+                      LineTextItem(
+                        text: '场景',
+                      ),
+                      Divider(),
+                      LineTextItem(
+                        text: '主题',
+                      ),
+
+                      Divider(),
+                      SubTitleItem(titleText: '音乐MV'),
+                      Container(
+                        height: 230,
+                        padding: EdgeInsets.fromLTRB(10, 5, 0, 10),
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: mvList,
+                        ),
+                      ),
+
                     ])))));
   }
+
+  //region 歌曲列表，每页4首
+  songBuilder(index){
+    var subList = newSongs.getRange(4* index, 4 * (index + 1));
+    List<Widget> current = [];
+    for (var o in subList) {
+      current.add(o);
+      current.add(Divider());
+    }
+    return Container(
+      margin: EdgeInsets.only(right: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: current,
+      ),
+    );
+  }
+//endregion
+
 }
