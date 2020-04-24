@@ -5,22 +5,20 @@ class AlbumImgItem extends StatefulWidget {
   final String title;
   final String subTitle;
   final String imgSrc;
-  final Key key;
 
 
-  AlbumImgItem({this.title, this.subTitle, this.imgSrc, this.key});
+  AlbumImgItem({this.title, this.subTitle, this.imgSrc});
 
   @override
-  _AlbumImgItemState createState() => _AlbumImgItemState(title: this.title, subTitle: this.subTitle, imgSrc: this.imgSrc, key: this.key);
+  _AlbumImgItemState createState() => _AlbumImgItemState(title: this.title, subTitle: this.subTitle, imgSrc: this.imgSrc);
 }
 
 class _AlbumImgItemState extends State<AlbumImgItem> {
   final String title;
   final String subTitle;
   final String imgSrc;
-  final Key key;
 
-  _AlbumImgItemState({this.title, this.subTitle, this.imgSrc, this.key});
+  _AlbumImgItemState({this.title, this.subTitle, this.imgSrc});
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +43,14 @@ class _AlbumImgItemState extends State<AlbumImgItem> {
             textAlign: TextAlign.left,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 12,height: 1.5, fontWeight: FontWeight.bold),
           ),
           Text(
             this.subTitle,
             textAlign: TextAlign.left,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black54),
+            style: TextStyle(fontSize: 12,height: 1.5, fontWeight: FontWeight.bold, color: Colors.black54),
           )
         ],
       ),

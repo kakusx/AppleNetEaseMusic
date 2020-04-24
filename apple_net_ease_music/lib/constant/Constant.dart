@@ -8,36 +8,11 @@ import 'package:flutter/cupertino.dart';
 
 //region 专辑列表
 List<Widget> albumList = [
-  AlbumImgItem(
-    key: Key('1'),
-    title: '新世界NEW WORLD',
-    subTitle: '华晨宇',
-    imgSrc: 'https://p3.music.126.net/sY3TVSvagXidLzCOy9WVwg==/109951164881032001.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('2'),
-    title: '100 Ways',
-    subTitle: '王嘉尔',
-    imgSrc: 'http://p2.music.126.net/bZxfyuY58soD71VGxv6BDQ==/109951164814715844.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('3'),
-    title: '从M到W的高速公路',
-    subTitle: 'Lil Ghost小鬼',
-    imgSrc: 'http://p2.music.126.net/oxBIGY-ZOZUoaZkR8m6mJQ==/109951164542290755.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('4'),
-    title: '아무도 모른다 OST',
-    subTitle: 'V.A.',
-    imgSrc: 'http://p1.music.126.net/r46Yx_4pVF1XgoQNS4_fIg==/109951164922833531.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('5'),
-    title: 'IVORY',
-    subTitle: '沈圭善',
-    imgSrc: 'http://p1.music.126.net/KsO32EFqwyptOMqA1hYGFQ==/109951164922653118.jpg?param=177y177',
-  ),
+  AlbumImgItem(title: '纸船', subTitle: '薛之谦,郁可唯', imgSrc: 'http://p3.music.126.net/8zl4n-hlm-2BKYsUG51SYQ==/109951164925881854.jpg', ),
+  AlbumImgItem(title: '我爱你', subTitle: '李荣浩', imgSrc: 'http://p4.music.126.net/FA3pB9HxLWcvfzdIkoV7JA==/109951164922705929.jpg', ),
+  AlbumImgItem(title: '煎熬', subTitle: '尹毓恪', imgSrc: 'http://p4.music.126.net/VoOnN18xSPNWl-a-GEoJpA==/109951164903592379.jpg', ),
+  AlbumImgItem(title: 'LOOK', subTitle: 'Apink', imgSrc: 'http://p4.music.126.net/70aqeNGo-m7rFRzQ9NhFaQ==/109951164900505375.jpg', ),
+  AlbumImgItem(title: '新世界NEW WORLD', subTitle: '华晨宇', imgSrc: 'http://p4.music.126.net/sY3TVSvagXidLzCOy9WVwg==/109951164881032001.jpg', ),
 ];
 //endregion
 
@@ -69,36 +44,12 @@ List<Widget> artistList = [
 
 //region 热门推荐
 List<Widget> hotList = [
-  AlbumImgItem(
-    key: Key('1'),
-    title: '新世界NEW WORLD',
-    subTitle: '华晨宇',
-    imgSrc: 'https://p3.music.126.net/sY3TVSvagXidLzCOy9WVwg==/109951164881032001.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('2'),
-    title: '100 Ways',
-    subTitle: '王嘉尔',
-    imgSrc: 'http://p2.music.126.net/bZxfyuY58soD71VGxv6BDQ==/109951164814715844.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('3'),
-    title: '从M到W的高速公路',
-    subTitle: 'Lil Ghost小鬼',
-    imgSrc: 'http://p2.music.126.net/oxBIGY-ZOZUoaZkR8m6mJQ==/109951164542290755.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('4'),
-    title: '아무도 모른다 OST',
-    subTitle: 'V.A.',
-    imgSrc: 'http://p1.music.126.net/r46Yx_4pVF1XgoQNS4_fIg==/109951164922833531.jpg?param=177y177',
-  ),
-  AlbumImgItem(
-    key: Key('5'),
-    title: 'IVORY',
-    subTitle: '沈圭善',
-    imgSrc: 'http://p1.music.126.net/KsO32EFqwyptOMqA1hYGFQ==/109951164922653118.jpg?param=177y177',
-  ),
+  AlbumImgItem(title: '新世界NEW WORLD', subTitle: '华晨宇', imgSrc: 'http://p4.music.126.net/sY3TVSvagXidLzCOy9WVwg==/109951164881032001.jpg', ),
+  AlbumImgItem(title: '我们的乐队 第5期', subTitle: '我们的乐队', imgSrc: 'http://p4.music.126.net/42aSd_E89VY6iY0kiwSCIw==/109951164912215201.jpg', ),
+  AlbumImgItem(title: '从M到W的高速公路', subTitle: 'Lil Ghost小鬼', imgSrc: 'http://p3.music.126.net/oxBIGY-ZOZUoaZkR8m6mJQ==/109951164542290755.jpg', ),
+  AlbumImgItem(title: 'I trust', subTitle: '(G)I-DLE', imgSrc: 'http://p3.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg', ),
+  AlbumImgItem(title: '歌手·当打之年 第10期', subTitle: '歌手', imgSrc: 'http://p4.music.126.net/SnrbCk-XWOERwZ5wiulhwQ==/109951164887098113.jpg', ),
+  AlbumImgItem(title: 'PEOPLE', subTitle: 'Code Kunst', imgSrc: 'http://p4.music.126.net/sUV5ofnck1GwfdrtHAS--g==/109951164864019028.jpg', ),
 ];
 //endregion
 
@@ -225,6 +176,16 @@ List<Widget> newSongs = [
 ];
 //endregion
 
+//region 本周新碟
+List<Widget> weekNewAlbums = [
+  AlbumImgItem(title: 'Take Yourself Home', subTitle: 'Troye Sivan', imgSrc: 'http://p4.music.126.net/6nuFSMK3UMG5nLsreYX1Vg==/109951164862495860.jpg', ),
+  AlbumImgItem(title: '100 Ways', subTitle: '王嘉尔', imgSrc: 'http://p4.music.126.net/bZxfyuY58soD71VGxv6BDQ==/109951164814715844.jpg', ),
+  AlbumImgItem(title: '我在北京等你 电视剧原声带', subTitle: '群星', imgSrc: 'http://p4.music.126.net/OwUk7hiX8Vg_dxckUSXkIg==/109951164742215840.jpg', ),
+  AlbumImgItem(title: 'LOOK', subTitle: 'Apink', imgSrc: 'http://p4.music.126.net/70aqeNGo-m7rFRzQ9NhFaQ==/109951164900505375.jpg', ),
+  AlbumImgItem(title: '新世界NEW WORLD', subTitle: '华晨宇', imgSrc: 'http://p4.music.126.net/sY3TVSvagXidLzCOy9WVwg==/109951164881032001.jpg', ),
+];
+//endregion
+
 //region MV列表
 List<Widget> mvList = [
   MvItem(title: '时间教会我们的事', artist: '魏妙如', imgSrc: 'http://p1.music.126.net/pI7lrYBRUXP2GObW-M4ATw==/109951164928610206.jpg', ),
@@ -249,3 +210,4 @@ MvItem(title: '基地 FOUNDATION', artist: '邱比（CHIU PI）', imgSrc: 'http:
 MvItem(title: '心之所向', artist: '轩辕剑', imgSrc: 'http://p1.music.126.net/Jt2ydf3BXMdH-_ldlwsk7w==/109951164912360032.jpg', ),
 MvItem(title: '그대만이 (You)', artist: '张德澈', imgSrc: 'http://p1.music.126.net/fMIhMoIIS6u9S4GZdicSug==/109951164910099959.jpg', ),
 ];
+//endregion

@@ -92,7 +92,7 @@ class _BrowsePageState extends State<BrowsePage> {
 
                       SubTitleItem(titleText: '新歌速递', buttonText: '查看全部'),
                       Container(
-                        height: 270,
+                        height: 260,
                         padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                         child: ListView.builder(
                           shrinkWrap: true,
@@ -104,6 +104,18 @@ class _BrowsePageState extends State<BrowsePage> {
                           },
                         ),
                       ),
+                      Divider(),
+                      SubTitleItem(titleText: '本周新碟', buttonText: '查看全部'),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                        height: 200,
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: weekNewAlbums,
+                        ),
+                      ),
+
                       Divider(),
                       SubTitleItem(titleText: '探索更多'),
                       LineTextItem(
@@ -149,6 +161,7 @@ class _BrowsePageState extends State<BrowsePage> {
       current.add(o);
       current.add(Divider());
     }
+    current.removeLast();
     return Container(
       margin: EdgeInsets.only(right: 15),
       child: Column(
