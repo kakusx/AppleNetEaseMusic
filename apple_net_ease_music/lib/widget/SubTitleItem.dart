@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SubTitleItem extends StatefulWidget {
+class SubTitleItem extends StatelessWidget {
   final String titleText;
   final String buttonText;
+  final IconData icon;
 
-  SubTitleItem({this.titleText, this.buttonText});
-
-  @override
-  _SubTitleItemState createState() => _SubTitleItemState(text: this.titleText, buttonText: this.buttonText);
-}
-
-class _SubTitleItemState extends State<SubTitleItem> {
-  final String text;
-  final String buttonText;
-
-  _SubTitleItemState({this.text, this.buttonText});
+  SubTitleItem({this.titleText, this.buttonText, this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +15,15 @@ class _SubTitleItemState extends State<SubTitleItem> {
         children: <Widget>[
           Expanded(
             child: Text(
-              text,
+              titleText,
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
           ),
-          Text(this.buttonText??'', style: TextStyle(color: Theme.of(context).accentColor, fontSize: 14),)
+          this.icon!=null ? Icon(this.icon, color:Theme.of(context).accentColor, size: 18 ,):Text(''),
+          Text(
+            this.buttonText ?? '',
+            style: TextStyle(color: Theme.of(context).accentColor, fontSize: 14),
+          )
         ],
       ),
     );

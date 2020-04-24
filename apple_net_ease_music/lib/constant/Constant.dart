@@ -1,8 +1,10 @@
 import 'package:appleneteasemusic/widget/AlbumImgItem.dart';
 import 'package:appleneteasemusic/widget/AlbumLargeItem.dart';
 import 'package:appleneteasemusic/widget/ArtistAvatar.dart';
+import 'package:appleneteasemusic/widget/BannerItem.dart';
 import 'package:appleneteasemusic/widget/MusicStyle.dart';
 import 'package:appleneteasemusic/widget/MvItem.dart';
+import 'package:appleneteasemusic/widget/RadioItem.dart';
 import 'package:appleneteasemusic/widget/SongItem.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -201,13 +203,44 @@ List<Widget> mvList = [
 ];
 //endregion
 
-//region 电台列表
-List<Widget> radioList = [
-MvItem(title: '时间教会我们的事', artist: '魏妙如', imgSrc: 'http://p1.music.126.net/pI7lrYBRUXP2GObW-M4ATw==/109951164928610206.jpg', ),
-MvItem(title: '우리 만남이 (But I\'ll Miss You)', artist: 'Paul Kim', imgSrc: 'http://p1.music.126.net/e-3FytH8gXxxu60lqP5IEA==/109951164928898753.jpg', ),
-MvItem(title: '乡巴佬', artist: 'Melo', imgSrc: 'http://p1.music.126.net/75so8i5ZjlAc8gWUItN5GQ==/109951164925872942.jpg', ),
-MvItem(title: '基地 FOUNDATION', artist: '邱比（CHIU PI）', imgSrc: 'http://p1.music.126.net/-RMdpDNYmp_Di3PEKRwD4A==/109951164900721913.jpg', ),
-MvItem(title: '心之所向', artist: '轩辕剑', imgSrc: 'http://p1.music.126.net/Jt2ydf3BXMdH-_ldlwsk7w==/109951164912360032.jpg', ),
-MvItem(title: '그대만이 (You)', artist: '张德澈', imgSrc: 'http://p1.music.126.net/fMIhMoIIS6u9S4GZdicSug==/109951164910099959.jpg', ),
+//region 独家放送
+List<Widget> excludedContents = [
+  MvItem(title: '深夜一角（毛不易）| 未曾哭过长夜的人，不足以谈人生', imgSrc: 'https://p2.music.126.net/4dQQ3AM7V9qDhO8C-_Ghqg==/109951164932195336.jpg', ),
+  MvItem(title: '超级面对面 第216期 韩东君： 我们采访了全网都在“馋”的男人', imgSrc: 'https://p2.music.126.net/vh2qBU5Se8DVgVhG0n_FkA==/109951164925037502.jpg', ),
+  MvItem(title: '《今日营业中》唐汉霄：云村隐秘歌单达人', imgSrc: 'https://p2.music.126.net/iG2jaC36gxOHejWSi2jjcg==/109951164924772486.jpg', ),
+];
+//endregion
+
+//region 电台Banner
+List<Widget> radioBannerList = [
+  BannerItem(type:'音乐故事', imgSrc: 'http://p1.music.126.net/2sLVrMVMedQgMDok95D4NQ==/109951164932521027.jpg'),
+  BannerItem(type:'活动', imgSrc: 'http://p1.music.126.net/ehgIWX36Nx2uuGjBQ_FauA==/109951164932523555.jpg'),
+  BannerItem(type:'直播', imgSrc: 'http://p1.music.126.net/H_rCEuqL0Qt6CGfjsM--9w==/109951164932531274.jpg'),
+  BannerItem(type:'情感调频', imgSrc: 'http://p1.music.126.net/11TxSxP8kPciY_lmzdsx-A==/109951164932603514.jpg'),
+];
+//endregion
+
+//region 推荐列表
+List<Widget> radioTopList = [
+  RadioItem(title: '用治愈的声音，暖进你的心', dispType: 1, type: '情感调频', imgSrc: 'https://p1.music.126.net/RMg92uMd1EYXPtHKAWfO4g==/109951164058652488.jpg', ),
+  RadioItem(title: '听最潮最酷的 rapper 说真话', dispType: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/A14EGdE1eEu_81K-E1u9oA==/109951164244504931.jpg', ),
+  RadioItem(title: '资深音乐DJ的音乐私享', dispType: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/zgqlBbVP_Pi6bdOOo2RuMg==/18758767883276946.jpg', ),
+];
+//endregion
+
+//region 推荐列表
+List<Widget> radioRcmdList = [
+
+  RadioItem(dispType: 2, dj:'楚动心璇', title: '听听老歌，好好生活', type: '音乐故事', imgSrc: 'https://p1.music.126.net/19rnf87CaR1kYqS8Hlg31A==/109951163114268603.jpg', ),
+  RadioItem(dispType: 2, dj:'我叫小欧_', title: '每天分享私房好歌', type: '音乐故事', imgSrc: 'https://p1.music.126.net/DV00fJPU9XdOVQEXv1tcTA==/109951164577476581.jpg', ),
+  RadioItem(dispType: 2, dj:'刺猬电台HBe', title: '韩寒主编one陪伴你文艺生活', type: '情感调频', imgSrc: 'https://p1.music.126.net/oT43FQ7mKDkTdsMn5RXqdQ==/18947883881774554.jpg', ),
+];
+//endregion
+
+//region 精品电台
+List<Widget> radioFeaturedList = [
+  RadioItem(dispType: 1, title: '愿用温柔的声音告诉你爱中的滋味', type: '付费精品', imgSrc: 'https://p1.music.126.net/Y_3o4yDDdCuptzn5Odw97g==/109951163987430932.jpg', ),
+  RadioItem(dispType: 1, title: '心灵夜话 慰藉你我', type: '付费精品', imgSrc: 'https://p1.music.126.net/QpNvAIUj6HOQ62PfqHYoqg==/1374389548145563.jpg', ),
+  RadioItem(dispType: 1, title: '磁性嗓音，带你入眠', type: '付费精品', imgSrc: 'https://p1.music.126.net/mfNKYl9eEOSc7XmXo6Xvvw==/109951163971771558.jpg', ),
 ];
 //endregion

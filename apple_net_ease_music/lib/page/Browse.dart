@@ -141,12 +141,24 @@ class _BrowsePageState extends State<BrowsePage> {
                       Divider(),
                       SubTitleItem(titleText: '音乐MV'),
                       Container(
-                        height: 230,
+                        height: 210,
                         padding: EdgeInsets.fromLTRB(10, 5, 0, 10),
                         child: ListView(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           children: mvList,
+                        ),
+                      ),
+
+                      Divider(),
+                      SubTitleItem(titleText: '独家放送'),
+                      Container(
+                        height: 210,
+                        padding: EdgeInsets.fromLTRB(10, 5, 0, 10),
+                        child: ListView(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          children: excludedContents,
                         ),
                       ),
 
@@ -163,7 +175,7 @@ class _BrowsePageState extends State<BrowsePage> {
     }
     current.removeLast();
     return Container(
-      margin: EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: current,

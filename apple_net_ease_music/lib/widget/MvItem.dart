@@ -12,6 +12,7 @@ class MvItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 240,
       padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,17 +32,17 @@ class MvItem extends StatelessWidget {
           Text(
             this.title,
             textAlign: TextAlign.left,
-            maxLines: 1,
+            maxLines: this.artist != null ? 1 : 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 14, height: 1.5, fontWeight: FontWeight.bold),
           ),
-          Text(
+          this.artist!=null?Text(
             this.artist,
             textAlign: TextAlign.left,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 14, height: 1.5, fontWeight: FontWeight.bold, color: Colors.black54),
-          ),
+          ):Container(),
         ],
       ),
     );

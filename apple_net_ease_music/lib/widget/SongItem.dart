@@ -45,7 +45,7 @@ class SongItem extends StatelessWidget {
               ),
             ),
           ),
-          Icon(Icons.add, color: Theme.of(context).accentColor,)
+          Icon(Icons.play_circle_outline, color: Theme.of(context).accentColor,)
         ],
       ),
     );

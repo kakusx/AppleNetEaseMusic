@@ -16,7 +16,7 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0;
 
-  List _pageNames = ['资料库', '为你推荐', '浏览', '广播',];
+  List _pageNames = ['资料库', '为你推荐', '浏览', '电台',];
   List _pageList = [LibraryPage(), ForYouPage(), BrowsePage(), RadioPage()];
 
   double _scrollHeight = 70;
@@ -77,7 +77,7 @@ class _TabsState extends State<Tabs> {
             BottomNavigationBarItem(icon: Icon(Icons.library_music), title: Text('资料库')),
             BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('为你推荐')),
             BottomNavigationBarItem(icon: Icon(Icons.queue_music), title: Text('浏览')),
-            BottomNavigationBarItem(icon: Icon(Icons.radio), title: Text('广播')),
+            BottomNavigationBarItem(icon: Icon(Icons.radio), title: Text('电台')),
           ]),
     );
   }
