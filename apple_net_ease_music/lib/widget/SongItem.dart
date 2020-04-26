@@ -36,7 +36,7 @@ class SongItem extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    this.title,
+                    this.artist,
                     style: TextStyle(fontSize: 11, height: 1.5, color: Colors.black38),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

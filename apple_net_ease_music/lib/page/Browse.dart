@@ -2,6 +2,7 @@ import 'package:appleneteasemusic/classes/ScrollEvent.dart';
 import 'package:appleneteasemusic/util/EventBusUtil.dart';
 import 'package:appleneteasemusic/constant/Constant.dart';
 import 'package:appleneteasemusic/widget/LineTextItem.dart';
+import 'package:appleneteasemusic/widget/SongListPage.dart';
 import 'package:appleneteasemusic/widget/SubTitleItem.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -100,7 +101,7 @@ class _BrowsePageState extends State<BrowsePage> {
                           itemCount: 10,
                           itemExtent: 310.0,
                           itemBuilder: (BuildContext context, int index){
-                            return songBuilder(index);
+                            return SongListPage(startIndex: index, songList: newSongs, pageSize: 4,);
                           },
                         ),
                       ),
@@ -164,24 +165,4 @@ class _BrowsePageState extends State<BrowsePage> {
 
                     ])))));
   }
-
-  //region 歌曲列表，每页4首
-  songBuilder(index){
-    var subList = newSongs.getRange(4* index, 4 * (index + 1));
-    List<Widget> current = [];
-    for (var o in subList) {
-      current.add(o);
-      current.add(Divider());
-    }
-    current.removeLast();
-    return Container(
-      margin: EdgeInsets.only(right: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: current,
-      ),
-    );
-  }
-//endregion
-
 }

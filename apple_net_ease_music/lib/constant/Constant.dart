@@ -228,9 +228,8 @@ List<Widget> radioTopList = [
 ];
 //endregion
 
-//region 推荐列表
+//region 推荐电台
 List<Widget> radioRcmdList = [
-
   RadioItem(dispType: 2, dj:'楚动心璇', title: '听听老歌，好好生活', type: '音乐故事', imgSrc: 'https://p1.music.126.net/19rnf87CaR1kYqS8Hlg31A==/109951163114268603.jpg', ),
   RadioItem(dispType: 2, dj:'我叫小欧_', title: '每天分享私房好歌', type: '音乐故事', imgSrc: 'https://p1.music.126.net/DV00fJPU9XdOVQEXv1tcTA==/109951164577476581.jpg', ),
   RadioItem(dispType: 2, dj:'刺猬电台HBe', title: '韩寒主编one陪伴你文艺生活', type: '情感调频', imgSrc: 'https://p1.music.126.net/oT43FQ7mKDkTdsMn5RXqdQ==/18947883881774554.jpg', ),
@@ -244,3 +243,42 @@ List<Widget> radioFeaturedList = [
   RadioItem(dispType: 1, title: '磁性嗓音，带你入眠', type: '付费精品', imgSrc: 'https://p1.music.126.net/mfNKYl9eEOSc7XmXo6Xvvw==/109951163971771558.jpg', ),
 ];
 //endregion
+
+
+//region 电台列表
+Map<String, List<Widget>> radioList = {
+  //音乐故事
+  "2":[
+    SongItem(title: '韦礼安的音乐人趣味访谈', artist: '作歌手韦礼安跟他的朋友们或不是朋友的人们聊天 ', imgSrc: 'https://p1.music.126.net/2NhOnoqcp19qXihgKHtYLA==/109951164841079856.jpg', ),
+    SongItem(title: '木上先生的诗', artist: '每一段文字我都会精心去雕琢，每一段的故事我都会用心去研磨。', imgSrc: 'https://p1.music.126.net/SFcK7wfXjISFzqyFs4qdNg==/109951163143707197.jpg', ),
+    SongItem(title: '糖蒜音乐故事', artist: '中国版的海盗电台', imgSrc: 'https://p1.music.126.net/-yxaZ-D3khs-I_4g4bbS2g==/109951163509540918.jpg', ),
+    SongItem(title: '谜醉音乐FM', artist: '音乐这东西，开心时入耳，伤心时入心。', imgSrc: 'https://p1.music.126.net/6f7CYHub_qBA5YVGKIsz1g==/109951164183335672.jpg', ),
+  ],
+  //情感调频
+  "3":[
+    RadioItem(dispType: 2, dj:'诗与歌Radio', title: '独立灵魂的栖息之地', type: '情感调频', imgSrc: 'https://p2.music.126.net/P5g8xlxx8_UolFkUe58aCQ==/109951164768047750.jpg', ),
+    RadioItem(dispType: 2, dj:'七锦菇凉', title: '偷偷听这一世情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/9QSJ4-xAFwqJrnHw-vnarg==/1373290026616936.jpg', ),
+    RadioItem(dispType: 2, dj:'_濋滢', title: '丧气少女的微甜情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/wilNNoOJive3V3DRW4VHyw==/109951164812353671.jpg', ),
+  ],
+  //有声书
+  "10001":[
+
+  ],
+  //二次元
+  "3001":[
+
+  ],
+  //商业财经
+  "453051":[
+
+  ],
+  //人文历史
+  "11":[
+
+  ],
+  //商业财经
+  "453051":[
+
+  ],
+
+};
