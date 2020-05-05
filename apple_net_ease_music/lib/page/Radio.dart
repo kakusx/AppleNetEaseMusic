@@ -33,6 +33,7 @@ class _RadioPageState extends State<RadioPage> {
                 child: Container(
                     padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListView(controller: _listScrollCtl, shrinkWrap: true, children: <Widget>[
+                      //region 标题
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 15, 0),
                         child: Row(
@@ -48,6 +49,9 @@ class _RadioPageState extends State<RadioPage> {
                         ),
                       ),
                       Divider(),
+                      //endregion
+
+                      //region banner
                       Container(
                         height: 125,
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
@@ -60,7 +64,9 @@ class _RadioPageState extends State<RadioPage> {
                       Container(
                         height: 20,
                       ),
+                      //endregion
 
+                      //region 快捷操作
                       Flex(direction: Axis.horizontal, children: <Widget>[
                         Expanded(
                           flex: 1,
@@ -113,7 +119,9 @@ class _RadioPageState extends State<RadioPage> {
                       Container(
                         height: 20,
                       ),
+                      //endregion
 
+                      //region 电台推荐
                       SubTitleItem(titleText: '电台推荐', buttonText: '换一换', icon: Icons.loop),
                       Container(
                         height: 150,
@@ -135,6 +143,9 @@ class _RadioPageState extends State<RadioPage> {
                           children: radioFeaturedList,
                         ),
                       ),
+                      //endregion
+
+                      //region 音乐故事
                       SubTitleItem(titleText: '音乐故事', buttonText: '播放全部', icon: Icons.play_arrow),
                       Container(
                         height: 275,
@@ -153,6 +164,9 @@ class _RadioPageState extends State<RadioPage> {
                           },
                         ),
                       ),
+                      //endregion
+
+                      //region 情感调频
                       SubTitleItem(
                         titleText: '情感调频',
                         buttonText: '查看全部',
@@ -165,6 +179,9 @@ class _RadioPageState extends State<RadioPage> {
                           children: radioList["3"],
                         ),
                       ),
+                      //endregion
+
+                      //region 有声书
                       SubTitleItem(titleText: '有声书', buttonText: '播放全部', icon: Icons.play_arrow),
                       Container(
                         height: 275,
@@ -183,6 +200,9 @@ class _RadioPageState extends State<RadioPage> {
                           },
                         ),
                       ),
+                      //endregion
+
+                      //region 二次元
                       SubTitleItem(
                         titleText: '二次元',
                         buttonText: '查看全部',
@@ -195,6 +215,9 @@ class _RadioPageState extends State<RadioPage> {
                           children: radioList["3"],
                         ),
                       ),
+                      //endregion
+
+                      //region 商业财经
                       SubTitleItem(titleText: '商业财经', buttonText: '播放全部', icon: Icons.play_arrow),
                       Container(
                         height: 275,
@@ -213,6 +236,7 @@ class _RadioPageState extends State<RadioPage> {
                           },
                         ),
                       ),
+                      //endregion
                     ])))));
   }
 }

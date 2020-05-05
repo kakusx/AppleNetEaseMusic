@@ -6,9 +6,9 @@ class RadioItem extends StatelessWidget {
   final String title;
   final String dj;
   final String imgSrc;
-  final int dispType;
+  final int dispStyle;
 
-  RadioItem({this.type, this.title, this.dj, this.imgSrc, this.dispType});
+  RadioItem({this.type, this.title, this.dj, this.imgSrc, this.dispStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class RadioItem extends StatelessWidget {
                 width: 100,
                 height: 100,
                 child: Stack(
-                  alignment: this.dispType == 1 ? Alignment.topLeft : Alignment.bottomLeft,
+                  alignment: this.dispStyle == 1 ? Alignment.topLeft : Alignment.bottomLeft,
                   children: <Widget>[
                     Container(
                         decoration: BoxDecoration(
@@ -59,7 +59,7 @@ class RadioItem extends StatelessWidget {
   }
 
   getCorner(context) {
-    return this.dispType == 1
+    return this.dispStyle == 1
         ? Container(
             padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
             decoration: BoxDecoration(
@@ -78,7 +78,7 @@ class RadioItem extends StatelessWidget {
   }
 
   getNameLine(context) {
-    return this.dispType == 2
+    return this.dispStyle == 2
         ? Container(
             width: 100,
             height: 50,

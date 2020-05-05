@@ -34,6 +34,7 @@ class _BrowsePageState extends State<BrowsePage> {
                 child: Container(
                     padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                     child: ListView(controller: _listScrollCtl, shrinkWrap: true, children: <Widget>[
+                      //region 标题
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 15, 0),
                         child: Row(
@@ -49,6 +50,9 @@ class _BrowsePageState extends State<BrowsePage> {
                         ),
                       ),
                       Divider(),
+                      //endregion
+
+                      //region banner
                       Container(
                         height: 270,
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
@@ -58,7 +62,13 @@ class _BrowsePageState extends State<BrowsePage> {
                           children: largeAlbums,
                         ),
                       ),
-                      SubTitleItem(titleText: '热门歌手', buttonText: '查看全部',),
+                      //endregion
+
+                      //region 热门歌手
+                      SubTitleItem(
+                        titleText: '热门歌手',
+                        buttonText: '查看全部',
+                      ),
                       Container(
                         height: 130,
                         child: ListView(
@@ -68,7 +78,13 @@ class _BrowsePageState extends State<BrowsePage> {
                         ),
                       ),
                       Divider(),
-                      SubTitleItem(titleText: '热门歌单', buttonText: '查看全部',),
+                      //endregion
+
+                      //region 热门歌单
+                      SubTitleItem(
+                        titleText: '热门歌单',
+                        buttonText: '查看全部',
+                      ),
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                         height: 200,
@@ -79,7 +95,12 @@ class _BrowsePageState extends State<BrowsePage> {
                         ),
                       ),
                       Divider(),
-                      SubTitleItem(titleText: '音乐心情',),
+                      //endregion
+
+                      //region 音乐心情
+                      SubTitleItem(
+                        titleText: '音乐心情',
+                      ),
                       Container(
                         height: 90,
                         padding: EdgeInsets.fromLTRB(10, 5, 0, 10),
@@ -90,7 +111,9 @@ class _BrowsePageState extends State<BrowsePage> {
                         ),
                       ),
                       Divider(),
+                      //endregion
 
+                      //region 新歌速递
                       SubTitleItem(titleText: '新歌速递', buttonText: '查看全部'),
                       Container(
                         height: 260,
@@ -100,12 +123,19 @@ class _BrowsePageState extends State<BrowsePage> {
                           scrollDirection: Axis.horizontal,
                           itemCount: 10,
                           itemExtent: 310.0,
-                          itemBuilder: (BuildContext context, int index){
-                            return SongListPage(startIndex: index, songList: newSongs, pageSize: 4,);
+                          itemBuilder: (BuildContext context, int index) {
+                            return SongListPage(
+                              startIndex: index,
+                              songList: newSongs,
+                              pageSize: 4,
+                            );
                           },
                         ),
                       ),
                       Divider(),
+                      //endregion
+
+                      //region 本周新碟
                       SubTitleItem(titleText: '本周新碟', buttonText: '查看全部'),
                       Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
@@ -118,6 +148,9 @@ class _BrowsePageState extends State<BrowsePage> {
                       ),
 
                       Divider(),
+                      //endregion
+
+                      //region 探索更多
                       SubTitleItem(titleText: '探索更多'),
                       LineTextItem(
                         text: '排行榜',
@@ -140,6 +173,9 @@ class _BrowsePageState extends State<BrowsePage> {
                       ),
 
                       Divider(),
+                      //endregion
+
+                      //region 音乐MV
                       SubTitleItem(titleText: '音乐MV'),
                       Container(
                         height: 210,
@@ -152,6 +188,9 @@ class _BrowsePageState extends State<BrowsePage> {
                       ),
 
                       Divider(),
+                      //endregion
+
+                      //region 独家放送
                       SubTitleItem(titleText: '独家放送'),
                       Container(
                         height: 210,
@@ -162,7 +201,7 @@ class _BrowsePageState extends State<BrowsePage> {
                           children: excludedContents,
                         ),
                       ),
-
+                      //endregion
                     ])))));
   }
 }

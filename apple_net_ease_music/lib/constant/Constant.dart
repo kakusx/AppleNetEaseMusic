@@ -1,3 +1,4 @@
+import 'package:appleneteasemusic/classes/Music.dart';
 import 'package:appleneteasemusic/widget/AlbumImgItem.dart';
 import 'package:appleneteasemusic/widget/AlbumLargeItem.dart';
 import 'package:appleneteasemusic/widget/ArtistAvatar.dart';
@@ -70,6 +71,40 @@ List<Widget> musicStyles = [
   MusicStyle(name: '快乐', imgSrc: 'https://kakus.cn/static/music_img/music_metal.png',),
   MusicStyle(name: '安静', imgSrc: 'https://kakus.cn/static/music_img/music_light.png',),
   MusicStyle(name: '思念', imgSrc: 'https://kakus.cn/static/music_img/music_china.png',),
+];
+//endregion
+
+//region 为你推荐-歌曲
+List<Music> forYouSongs = [
+  Music(title: '悬日', artist: '田馥甄', imgSrc: 'http://p3.music.126.net/qX7ixB5ZT2wVJwgACuf_nA==/109951164623078367.jpg', ),
+  Music(title: '颠倒的梦', artist: 'Far East Movement,摩登兄弟刘宇宁', imgSrc: 'http://p3.music.126.net/T13jcXCVrpAVmWzgIes7Qg==/109951164609979246.jpg', ),
+  Music(title: '两个普普通通小青年', artist: '李荣浩,刘柏辛Lexie', imgSrc: 'http://p4.music.126.net/CwoKbUrQlIFxv7UW3oIykg==/109951164614012633.jpg', ),
+  Music(title: '姜子牙', artist: '张杰', imgSrc: 'http://p3.music.126.net/NeRnu3N8odfhuInneUrc4g==/109951164616496353.jpg', ),
+  Music(title: 'If I Can', artist: 'Lil Ghost小鬼', imgSrc: 'http://p3.music.126.net/oxBIGY-ZOZUoaZkR8m6mJQ==/109951164542290755.jpg', ),
+  Music(title: 'Yummy', artist: 'Justin Bieber', imgSrc: 'http://p4.music.126.net/qS2ZOZAGRQ3SqT2xaiiWpA==/109951164677677467.jpg', ),
+  Music(title: 'One and Only', artist: '木村拓哉', imgSrc: 'http://p4.music.126.net/vgmX6CKt7lrKddCqFXwqiQ==/109951164603537194.jpg', ),
+  Music(title: '赤脚追光', artist: 'R1SE', imgSrc: 'http://p4.music.126.net/is4Px5MA6HtH8cUbbVzsYA==/109951164616512026.jpg', ),
+  Music(title: '羡慕', artist: '许嵩', imgSrc: 'http://p3.music.126.net/z3iaVvR-7_DLxzktOu5I3g==/109951164594343426.jpg', ),
+];
+//endregion
+
+//region 为你推荐-专辑
+List<Widget> forYouAlbums = [
+  RadioItem(dispStyle: 2, title: '因为我们在一起', dj: '王一博', imgSrc: 'http://p3.music.126.net/VCCQ68Zddu3iiUkAE856iw==/109951164788709822.jpg', ),
+  RadioItem(dispStyle: 2, title: '雪花落下', dj: '周深', imgSrc: 'http://p3.music.126.net/vB5VcDUS3aE0OqWx8zmGwQ==/109951164784793909.jpg', ),
+  RadioItem(dispStyle: 2, title: '平凡天使', dj: 'G.E.M.邓紫棋', imgSrc: 'http://p3.music.126.net/8JkfznEa_qqASaJvUIicyw==/109951164784376724.jpg', ),
+
+  RadioItem(dispStyle: 2, title: '如果云知道', dj: '黄轩', imgSrc: 'http://p4.music.126.net/UPm4yVGiqnpkgyilmbjTwQ==/109951164579504051.jpg', ),
+  RadioItem(dispStyle: 2, title: '东北民谣', dj: '毛不易', imgSrc: 'http://p3.music.126.net/XPPeIZu7wgcGXZ0666mfFg==/109951164640697307.jpg', ),
+  RadioItem(dispStyle: 2, title: '老友记', dj: '李荣浩', imgSrc: 'http://p4.music.126.net/a0jjOlv-61XLSoIiMjjGgA==/109951164566000641.jpg', ),
+
+  RadioItem(dispStyle: 2, title: '听说', dj: '王博文', imgSrc: 'http://p4.music.126.net/3GHmHAptBo8KqE-ogSqYMg==/109951164569030723.jpg', ),
+  RadioItem(dispStyle: 2, title: '不群', dj: '恋恋故人难,周深', imgSrc: 'http://p3.music.126.net/LxU9_5pnBO-1ViHEXVJd1g==/109951164569062875.jpg', ),
+  RadioItem(dispStyle: 2, title: 'FXXKBOY2.0', dj: '队长,黄礼格', imgSrc: 'http://p3.music.126.net/g0lD5dcao2i-WRy9Ajzhgg==/109951164544188033.jpg', ),
+
+  RadioItem(dispStyle: 2, title: '漂', dj: '马頔', imgSrc: 'http://p4.music.126.net/t27-G71EOXTl1HTbveeC9A==/109951164554706909.jpg', ),
+  RadioItem(dispStyle: 2, title: '因“我”而起', dj: '张韶涵', imgSrc: 'http://p4.music.126.net/6X1e4gqCX3NoA_Xm6SiavQ==/109951164553007725.jpg', ),
+  RadioItem(dispStyle: 2, title: '水乡', dj: '毛不易', imgSrc: 'http://p3.music.126.net/XPPeIZu7wgcGXZ0666mfFg==/109951164640697307.jpg', ),
 ];
 //endregion
 
@@ -222,25 +257,25 @@ List<Widget> radioBannerList = [
 
 //region 推荐列表
 List<Widget> radioTopList = [
-  RadioItem(title: '用治愈的声音，暖进你的心', dispType: 1, type: '情感调频', imgSrc: 'https://p1.music.126.net/RMg92uMd1EYXPtHKAWfO4g==/109951164058652488.jpg', ),
-  RadioItem(title: '听最潮最酷的 rapper 说真话', dispType: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/A14EGdE1eEu_81K-E1u9oA==/109951164244504931.jpg', ),
-  RadioItem(title: '资深音乐DJ的音乐私享', dispType: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/zgqlBbVP_Pi6bdOOo2RuMg==/18758767883276946.jpg', ),
+  RadioItem(title: '用治愈的声音，暖进你的心', dispStyle: 1, type: '情感调频', imgSrc: 'https://p1.music.126.net/RMg92uMd1EYXPtHKAWfO4g==/109951164058652488.jpg', ),
+  RadioItem(title: '听最潮最酷的 rapper 说真话', dispStyle: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/A14EGdE1eEu_81K-E1u9oA==/109951164244504931.jpg', ),
+  RadioItem(title: '资深音乐DJ的音乐私享', dispStyle: 1, type: '音乐故事', imgSrc: 'https://p1.music.126.net/zgqlBbVP_Pi6bdOOo2RuMg==/18758767883276946.jpg', ),
 ];
 //endregion
 
 //region 推荐电台
 List<Widget> radioRcmdList = [
-  RadioItem(dispType: 2, dj:'楚动心璇', title: '听听老歌，好好生活', type: '音乐故事', imgSrc: 'https://p1.music.126.net/19rnf87CaR1kYqS8Hlg31A==/109951163114268603.jpg', ),
-  RadioItem(dispType: 2, dj:'我叫小欧_', title: '每天分享私房好歌', type: '音乐故事', imgSrc: 'https://p1.music.126.net/DV00fJPU9XdOVQEXv1tcTA==/109951164577476581.jpg', ),
-  RadioItem(dispType: 2, dj:'刺猬电台HBe', title: '韩寒主编one陪伴你文艺生活', type: '情感调频', imgSrc: 'https://p1.music.126.net/oT43FQ7mKDkTdsMn5RXqdQ==/18947883881774554.jpg', ),
+  RadioItem(dispStyle: 2, dj:'楚动心璇', title: '听听老歌，好好生活', type: '音乐故事', imgSrc: 'https://p1.music.126.net/19rnf87CaR1kYqS8Hlg31A==/109951163114268603.jpg', ),
+  RadioItem(dispStyle: 2, dj:'我叫小欧_', title: '每天分享私房好歌', type: '音乐故事', imgSrc: 'https://p1.music.126.net/DV00fJPU9XdOVQEXv1tcTA==/109951164577476581.jpg', ),
+  RadioItem(dispStyle: 2, dj:'刺猬电台HBe', title: '韩寒主编one陪伴你文艺生活', type: '情感调频', imgSrc: 'https://p1.music.126.net/oT43FQ7mKDkTdsMn5RXqdQ==/18947883881774554.jpg', ),
 ];
 //endregion
 
 //region 精品电台
 List<Widget> radioFeaturedList = [
-  RadioItem(dispType: 1, title: '愿用温柔的声音告诉你爱中的滋味', type: '付费精品', imgSrc: 'https://p1.music.126.net/Y_3o4yDDdCuptzn5Odw97g==/109951163987430932.jpg', ),
-  RadioItem(dispType: 1, title: '心灵夜话 慰藉你我', type: '付费精品', imgSrc: 'https://p1.music.126.net/QpNvAIUj6HOQ62PfqHYoqg==/1374389548145563.jpg', ),
-  RadioItem(dispType: 1, title: '磁性嗓音，带你入眠', type: '付费精品', imgSrc: 'https://p1.music.126.net/mfNKYl9eEOSc7XmXo6Xvvw==/109951163971771558.jpg', ),
+  RadioItem(dispStyle: 1, title: '愿用温柔的声音告诉你爱中的滋味', type: '付费精品', imgSrc: 'https://p1.music.126.net/Y_3o4yDDdCuptzn5Odw97g==/109951163987430932.jpg', ),
+  RadioItem(dispStyle: 1, title: '心灵夜话 慰藉你我', type: '付费精品', imgSrc: 'https://p1.music.126.net/QpNvAIUj6HOQ62PfqHYoqg==/1374389548145563.jpg', ),
+  RadioItem(dispStyle: 1, title: '磁性嗓音，带你入眠', type: '付费精品', imgSrc: 'https://p1.music.126.net/mfNKYl9eEOSc7XmXo6Xvvw==/109951163971771558.jpg', ),
 ];
 //endregion
 
@@ -256,9 +291,9 @@ Map<String, List<Widget>> radioList = {
   ],
   //情感调频
   "3":[
-    RadioItem(dispType: 2, dj:'诗与歌Radio', title: '独立灵魂的栖息之地', type: '情感调频', imgSrc: 'https://p2.music.126.net/P5g8xlxx8_UolFkUe58aCQ==/109951164768047750.jpg', ),
-    RadioItem(dispType: 2, dj:'七锦菇凉', title: '偷偷听这一世情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/9QSJ4-xAFwqJrnHw-vnarg==/1373290026616936.jpg', ),
-    RadioItem(dispType: 2, dj:'_濋滢', title: '丧气少女的微甜情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/wilNNoOJive3V3DRW4VHyw==/109951164812353671.jpg', ),
+    RadioItem(dispStyle: 2, dj:'诗与歌Radio', title: '独立灵魂的栖息之地', type: '情感调频', imgSrc: 'https://p2.music.126.net/P5g8xlxx8_UolFkUe58aCQ==/109951164768047750.jpg', ),
+    RadioItem(dispStyle: 2, dj:'七锦菇凉', title: '偷偷听这一世情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/9QSJ4-xAFwqJrnHw-vnarg==/1373290026616936.jpg', ),
+    RadioItem(dispStyle: 2, dj:'_濋滢', title: '丧气少女的微甜情话', type: '情感调频', imgSrc: 'https://p2.music.126.net/wilNNoOJive3V3DRW4VHyw==/109951164812353671.jpg', ),
   ],
   //有声书
   "10001":[
