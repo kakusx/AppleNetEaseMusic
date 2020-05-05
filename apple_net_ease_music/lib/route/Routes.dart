@@ -1,9 +1,10 @@
-import 'package:appleneteasemusic/page/Library.dart';
+import 'package:appleneteasemusic/page/AlbumDetail.dart';
 import 'package:appleneteasemusic/page/Tabs.dart';
 import 'package:flutter/material.dart';
 
 final routes = {
   '/': (context) => Tabs(),
+  '/album': (context, {arguments}) => AlbumDetail(arguments:arguments),
 };
 
 RouteFactory onGenerateRoute = (RouteSettings settings) {

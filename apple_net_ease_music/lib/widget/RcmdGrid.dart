@@ -26,7 +26,7 @@ class RcmdGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 215,
+        height: 220,
         child: new StaggeredGridView.count(
           crossAxisCount: 5,
           staggeredTiles: _staggeredTiles,

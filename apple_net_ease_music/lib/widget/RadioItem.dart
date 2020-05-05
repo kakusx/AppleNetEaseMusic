@@ -50,7 +50,7 @@ class RadioItem extends StatelessWidget {
                 width: 100,
                 child: Text(this.title,
                     style: TextStyle(
-                      fontSize: 10,
+                      fontSize: 11,
                     )),
               )
             ],

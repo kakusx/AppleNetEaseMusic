@@ -58,31 +58,17 @@ class _ForYouPageState extends State<ForYouPage> {
                       Divider(),
                       //endregion
 
-                      //region 最近播放
-                      SubTitleItem(titleText: '最近播放', buttonText: '查看全部',),
-                      GridView.count(
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 0,
-                        padding: EdgeInsets.all(3),
-                        crossAxisCount: 2,
-                        childAspectRatio: 0.78,
-                        children: albumList.sublist(0,2),
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                      ),
-                      Divider(),
-                      //endregion
-
                       //region 为你精挑细选
-                      SubTitleItem(titleText: '为你精挑细选', buttonText: '查看更多',),
+                      SubTitleItem(titleText: '为你精挑细选', buttonText: '换一换', icon: Icons.loop,),
                       Container(
-                        height: 160,
+                        height: 130,
                         padding: EdgeInsets.only(left: 0),
                         child: Flex(
                           direction: Axis.horizontal,
                           children: forYouAlbums.sublist(0, 3),
                         ),
                       ),
+                      Divider(),
                       //endregion
 
                       //region 歌曲列表1
@@ -106,7 +92,6 @@ class _ForYouPageState extends State<ForYouPage> {
                       ),
                       Divider(),
                       //endregion
-
 
                       //region 歌单列表1
                       SubTitleItem(titleText: '宅家听歌的不二之选', buttonText: '查看更多',),
@@ -142,7 +127,6 @@ class _ForYouPageState extends State<ForYouPage> {
                       ),
                       Divider(),
                       //endregion
-
 
                       //region 电台列表 1
                       SubTitleItem(titleText: '你喜欢的声音 这里都有', buttonText: '播放全部', icon: Icons.play_arrow),
