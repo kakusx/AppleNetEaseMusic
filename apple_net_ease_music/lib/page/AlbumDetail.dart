@@ -50,8 +50,6 @@ class _AlbumDetailState extends State<AlbumDetail> {
           _scrollHeight = 0;
           _opacity = 1;
         }
-        print(_scrollHeight);
-        print(_opacity);
       });
     });
   }
@@ -103,149 +101,163 @@ class _AlbumDetailState extends State<AlbumDetail> {
               color: Colors.white,
               child: CupertinoScrollbar(
                   child: Container(
-                      padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                      padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
                       child: ListView(controller: _listScrollCtl, shrinkWrap: true, children: <Widget>[
-                        //region 专辑信息
                         Container(
-                          height: 125,
-                          child: Row(
+                          padding: EdgeInsets.all(10),
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              // todo 标题图点击放大
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(6),
-                                child: CachedNetworkImage(
-                                  fit: BoxFit.cover,
-                                  imageUrl: _music.imgSrc ?? "",
-                                  width: 120,
-                                  height: 120,
-                                ),
-                              ),
+                              //region 专辑信息
                               Container(
-                                height: 120,
-                                margin: EdgeInsets.only(left: 20),
-                                child: Column(
+                                height: 125,
+                                child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            _music.title,
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                            ),
-                                          ),
-                                          Text(
-                                            _music.artist,
-                                            style: TextStyle(color: Theme
-                                                .of(context)
-                                                .accentColor, fontSize: 16),
-                                          ),
-                                          Text(_music.musicType + ' ' + _music.year.toString(), style: TextStyle(color: Colors.black54)),
-                                        ],
+                                    // todo 标题图点击放大
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(6),
+                                      child: CachedNetworkImage(
+                                        fit: BoxFit.cover,
+                                        imageUrl: _music.imgSrc ?? "",
+                                        width: 120,
+                                        height: 120,
                                       ),
                                     ),
                                     Container(
-                                        width: 195,
-                                        height: 24,
-                                        child: Row(
-                                          children: <Widget>[
-                                            Expanded(
-                                              child: Align(
-                                                alignment: Alignment.centerLeft,
-                                                child: Icon(OMIcons.cloudDownload, color: Theme
-                                                    .of(context)
-                                                    .accentColor, size: 24),
-                                              ),
+                                      height: 120,
+                                      margin: EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Text(
+                                                  _music.title,
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  _music.artist,
+                                                  style: TextStyle(color: Theme
+                                                      .of(context)
+                                                      .accentColor, fontSize: 16),
+                                                ),
+                                                Text(_music.musicType + ' ' + _music.year.toString(), style: TextStyle(color: Colors.black54)),
+                                              ],
                                             ),
-                                            Container(
-                                              width: 22,
-                                              height: 22,
-                                              decoration: BoxDecoration(
-                                                color: Theme
-                                                    .of(context)
-                                                    .accentColor,
-                                                borderRadius: BorderRadius.circular(20),
-                                              ),
-                                              child: Icon(Icons.more_vert, color: Colors.white, size: 22),
-                                            )
-                                          ],
-                                        )),
+                                          ),
+                                          Container(
+                                              width: 195,
+                                              height: 24,
+                                              child: Row(
+                                                children: <Widget>[
+                                                  Expanded(
+                                                    child: Align(
+                                                      alignment: Alignment.centerLeft,
+                                                      child: Icon(OMIcons.cloudDownload, color: Theme
+                                                          .of(context)
+                                                          .accentColor, size: 24),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    width: 22,
+                                                    height: 22,
+                                                    decoration: BoxDecoration(
+                                                      color: Theme
+                                                          .of(context)
+                                                          .accentColor,
+                                                      borderRadius: BorderRadius.circular(20),
+                                                    ),
+                                                    child: Icon(Icons.more_vert, color: Colors.white, size: 22),
+                                                  )
+                                                ],
+                                              )),
+                                        ],
+                                      ),
+                                    )
                                   ],
                                 ),
-                              )
+                              ),
+                              Divider(),
+                              //endregion
+
+                              //region 专辑简介
+                              new GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _showFullDesc = !_showFullDesc;
+                                    });
+                                  },
+                                  child: Text(
+                                    _music.desc,
+                                    maxLines: _showFullDesc ? 20 : 4,
+                                    overflow: TextOverflow.ellipsis,
+                                  )),
+                              Divider(),
+                              //endregion
+
+                              //region 播放按钮
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: FlatButton(
+                                      color: Color.fromRGBO(0, 0, 0, 0.05),
+                                      textColor: Theme.of(context).accentColor,
+                                      child: Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Icon(Icons.play_arrow, size: 16,),
+                                          Container(width: 3,),
+                                          new Text('播放全部')
+                                        ],
+                                      ),
+                                      onPressed: () {
+                                      },
+                                    ),
+                                  ),
+                                  Container(width: 10,),
+                                  Expanded(
+                                      child: FlatButton(
+                                        color: Color.fromRGBO(0, 0, 0, 0.05),
+                                        textColor: Theme.of(context).accentColor,
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(Icons.shuffle, size: 16,),
+                                            Container(width: 3,),
+                                            new Text('随机播放')
+                                          ],
+                                        ),
+                                        onPressed: () {
+                                        },
+                                      )
+                                  )
+                                ],
+                              ),
+                              Divider(),
+                              //endregion
+
+                              //region 歌曲列表
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: getSongList(),
+                              ),
+                              //endregion
+
+                              Text('${_musicList.length}首歌曲，39分钟', style:TextStyle(color: Colors.black38, height: 1.5, fontSize: 14)),
+
                             ],
                           ),
                         ),
-                        Divider(),
-                        //endregion
 
-                        //region 专辑简介
-                        new GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                _showFullDesc = !_showFullDesc;
-                              });
-                            },
-                            child: Text(
-                              _music.desc,
-                              maxLines: _showFullDesc ? 20 : 4,
-                              overflow: TextOverflow.ellipsis,
-                            )),
-                        Divider(),
-                        //endregion
 
-                        //region 播放按钮
-                        Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: MaterialButton(
-                                  color: Color.fromRGBO(255, 255, 255, 0.9),
-                                  textColor: Theme.of(context).accentColor,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(Icons.play_arrow, size: 16,),
-                                      Container(width: 3,),
-                                      new Text('播放全部')
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                  },
-                                ),
-                              ),
-                              Container(width: 10,),
-                              Expanded(
-                                child: MaterialButton(
-                                  color: Color.fromRGBO(255, 255, 255, 0.9),
-                                  textColor: Theme.of(context).accentColor,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(Icons.shuffle, size: 16,),
-                                      Container(width: 3,),
-                                      new Text('随机播放')
-                                    ],
-                                  ),
-                                  onPressed: () {
-                                  },
-                                )
-                              )
-                            ],
-                        ),
-                        Divider(),
-                        //endregion
 
-                        //region 歌曲列表
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: getSongList(),
-                        ),
-                        //endregion
 
                         //region 更多作品
                         SubTitleItem(titleText: '更多${_music.artist}的作品', buttonText: '查看全部'),
@@ -284,10 +296,14 @@ class _AlbumDetailState extends State<AlbumDetail> {
     for (var music in _musicList) {
       result.add(Row(
         children: <Widget>[
-          Text((_musicList.indexOf(music) + 1).toString(), style: TextStyle(color: Colors.black38, height: 1.5),),
+          Text((_musicList.indexOf(music) + 1).toString(), style: TextStyle(color: Colors.black38, height: 1.8),),
           Container(width: 10,),
           Expanded(
-            child: Text(music, style:TextStyle(height: 1.5, fontSize: 15)),
+            child: Text(music, style:TextStyle(height: 1.8, fontSize: 16)),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Text('3:15', style:TextStyle(color: Colors.black38, height: 1.8, fontSize: 12)),
           )
         ],
       ));
